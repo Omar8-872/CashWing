@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/pay_bg">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="40dp"
+        android:paddingBottom="32dp"
+        android:background="@drawable/bg_header">
+
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:background="@drawable/bg_circle_white"
+            android:contentDescription="@string/profile"
+            android:padding="20dp"
+            android:src="@drawable/ic_profile" />
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/name"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/phone"
+            android:textColor="@color/pay_stroke"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/bg_card">
+
+        <TextView
+            android:id="@+id/textBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_money"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/pay_primary"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/balance_label"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textSent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_send"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/pay_primary"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/total_sent_label"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textReceived"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_history"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/pay_primary"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/total_received_label"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/bg_card">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/spending_7"
+            android:textColor="@color/pay_dark"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <com.example.quickpay.BarChartView
+            android:id="@+id/chartSpending"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBack"
+        style="@style/PayButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:drawableStart="@drawable/ic_home"
+        android:text="@string/back_home" />
+
+    <Button
+        android:id="@+id/btnReport"
+        style="@style/PayButton.Dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:drawableStart="@drawable/ic_history"
+        android:text="@string/monthly_report" />
+
+    <Button
+        android:id="@+id/btnChangePin"
+        style="@style/PayButton.Dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:drawableStart="@drawable/ic_lock"
+        android:text="@string/change_pin" />
+
+    <Button
+        android:id="@+id/btnSupport"
+        style="@style/PayButton.Gold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:drawableStart="@drawable/ic_phone"
+        android:text="@string/customer_support" />
+
+    <Button
+        android:id="@+id/btnLanguage"
+        style="@style/PayButton.Dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/language_switch" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        style="@style/PayButton.Outline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:drawableStart="@drawable/ic_logout"
+        android:text="@string/logout" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        style="@style/PayButton.Red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:drawableStart="@drawable/ic_delete"
+        android:text="@string/delete_account" />
+</LinearLayout>
+</ScrollView>

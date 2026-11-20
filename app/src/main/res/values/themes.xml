@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.QuickPay" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/pay_primary</item>
+        <item name="colorPrimaryDark">@color/pay_dark</item>
+        <item name="colorAccent">@color/pay_primary</item>
+        <item name="android:statusBarColor">@color/pay_primary</item>
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+</resources>

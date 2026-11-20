@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@color/pay_bg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <View
+                android:id="@+id/bgHeader"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_header"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/imgWallet"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/bg_circle_white"
+                android:contentDescription="@string/cd_wallet"
+                android:padding="12dp"
+                android:src="@drawable/ic_wallet"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textWelcome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="24dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/welcome"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/imgWallet"
+                app:layout_constraintBottom_toBottomOf="@id/imgWallet"
+                app:layout_constraintStart_toEndOf="@id/imgWallet"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <View
+                android:id="@+id/cardBalance"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/bg_card"
+                app:layout_constraintTop_toBottomOf="@id/imgWallet"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textBalanceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                android:drawableStart="@drawable/ic_money"
+                android:drawablePadding="6dp"
+                android:drawableTint="@color/pay_gray"
+                android:text="@string/your_balance"
+                android:textColor="@color/pay_gray"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="@id/cardBalance"
+                app:layout_constraintStart_toStartOf="@id/cardBalance" />
+
+            <TextView
+                android:id="@+id/textBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/money_zero"
+                android:textColor="@color/pay_primary"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/textBalanceLabel"
+                app:layout_constraintStart_toStartOf="@id/textBalanceLabel" />
+
+            <TextView
+                android:id="@+id/textRecentLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/recent_activity"
+                android:textColor="@color/pay_dark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/cardBalance"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textRecent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/bg_card"
+                android:lineSpacingExtra="4dp"
+                android:padding="16dp"
+                android:text="@string/no_transactions_yet"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/textRecentLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btnSend"
+                style="@style/PayButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="6dp"
+                android:drawableStart="@drawable/ic_send"
+                android:text="@string/send"
+                app:layout_constraintTop_toBottomOf="@id/textRecent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnDonate" />
+
+            <Button
+                android:id="@+id/btnDonate"
+                style="@style/PayButton.Gold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="24dp"
+                android:drawableStart="@drawable/ic_charity"
+                android:text="@string/donate"
+                app:layout_constraintTop_toTopOf="@id/btnSend"
+                app:layout_constraintStart_toEndOf="@id/btnSend"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btnHistory"
+                style="@style/PayButton.Dark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="6dp"
+                android:drawableStart="@drawable/ic_history"
+                android:text="@string/history"
+                app:layout_constraintTop_toBottomOf="@id/btnSend"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnProfile" />
+
+            <Button
+                android:id="@+id/btnProfile"
+                style="@style/PayButton.Dark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="24dp"
+                android:drawableStart="@drawable/ic_profile"
+                android:text="@string/profile"
+                app:layout_constraintTop_toTopOf="@id/btnHistory"
+                app:layout_constraintStart_toEndOf="@id/btnHistory"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btnLogout"
+                style="@style/PayButton.Outline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="24dp"
+                android:drawableStart="@drawable/ic_logout"
+                android:text="@string/logout"
+                app:layout_constraintTop_toBottomOf="@id/btnHistory"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/money1"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="top|start"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:contentDescription="@string/cd_flying_money"
+        android:src="@drawable/ic_flying_money"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/money2"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/cd_flying_money"
+        android:src="@drawable/ic_flying_money"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/money3"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/cd_flying_money"
+        android:src="@drawable/ic_flying_money"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/money4"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="top|start"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="110dp"
+        android:contentDescription="@string/cd_flying_money"
+        android:src="@drawable/ic_flying_money"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/money5"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="110dp"
+        android:contentDescription="@string/cd_flying_money"
+        android:src="@drawable/ic_flying_money"
+        android:visibility="invisible" />
+</FrameLayout>

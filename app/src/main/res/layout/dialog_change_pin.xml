@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/editOldPin"
+        style="@style/PayInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_lock"
+        android:hint="@string/hint_current_pin"
+        android:inputType="numberPassword"
+        android:maxLength="12" />
+
+    <EditText
+        android:id="@+id/editNewPin"
+        style="@style/PayInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:drawableStart="@drawable/ic_lock"
+        android:hint="@string/hint_new_pin"
+        android:inputType="numberPassword"
+        android:maxLength="12" />
+</LinearLayout>

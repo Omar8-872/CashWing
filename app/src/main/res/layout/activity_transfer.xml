@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pay_bg">
+
+    <LinearLayout
+        android:id="@+id/headerTransfer"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_header">
+
+        <ImageView
+            android:id="@+id/imgSend"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:background="@drawable/bg_circle_white"
+            android:contentDescription="@string/send"
+            android:padding="16dp"
+            android:src="@drawable/ic_send" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/send_money"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/balance_label"
+            android:textColor="@color/pay_stroke"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerTransfer"
+        android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/cardTransfer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@drawable/bg_card">
+
+        <EditText
+            android:id="@+id/editReceiver"
+            style="@style/PayInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_phone"
+            android:hint="@string/hint_receiver_phone"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/editAmount"
+            style="@style/PayInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:drawableStart="@drawable/ic_money"
+            android:hint="@string/hint_amount"
+            android:inputType="numberDecimal" />
+
+        <LinearLayout
+            android:id="@+id/layoutChips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/chip1"
+                style="@style/PayChip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="50" />
+
+            <Button
+                android:id="@+id/chip2"
+                style="@style/PayChip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="100" />
+
+            <Button
+                android:id="@+id/chip3"
+                style="@style/PayChip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="500" />
+
+            <Button
+                android:id="@+id/chip4"
+                style="@style/PayChip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1000" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSend"
+            style="@style/PayButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/ic_send"
+            android:text="@string/continue_label" />
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

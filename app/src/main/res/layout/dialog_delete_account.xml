@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/textDeleteInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_info_static"
+        android:textColor="@color/pay_gray"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/editDeletePin"
+        style="@style/PayInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:drawableStart="@drawable/ic_lock"
+        android:hint="@string/hint_enter_pin"
+        android:inputType="numberPassword"
+        android:maxLength="12" />
+</LinearLayout>
